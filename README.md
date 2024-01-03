@@ -1,11 +1,14 @@
+# Refactor
+
 This fork is a refactor of [plotly.py](https://github.com/plotly/plotly.js) with the following goals:
 1) Develop a tool for analyzing dependencies between files and individual functions
-2) Using Typescript and/or Rust, strangle the `cartesian/` folder by creating a `cartesian2/` (allowing `cartesian/` to function as a legacy API for whatever is dependent on it.
+2) Using Typescript and/or Rust (or whatever modern Javascript), strangle the `cartesian/` folder by creating a `cartesian2/` (allowing `cartesian/` to function as a legacy API for whatever is dependent on it)
 3) Move away from *Jasmine* for the `cartesian2/` folder to a testing framework that allows:
   - Parameterized Testing (ie. if iterating through all options, does this configuration still work?)
   - Full page lifecycle testing (Selenium)
   - Unit testing of internal functions
 4) `cartesian2/` be a drop in replacement for `cartesian/`
+
 
 There may be some _vertical_ refactoring as well (ie. things that use or are used by `cartesian/`) but no _horizontal_ refactory (won't be refactoring `geo`).
 
