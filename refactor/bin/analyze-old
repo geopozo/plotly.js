@@ -1,0 +1,44 @@
+#!/usr/bin/zsh
+
+## GET ROOT DIR
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+
+[[ -z "${ROOT_DIR}" ]] && echo "Error: can't find root project directory" 1>&2 && exit 1
+
+## USAGE HELP
+usage=(
+  "analyze-old [-h|--h]"
+  "analyze-old [-l|--list]      List entrypoints to plotly"
+  "analyze-old [-e|--entry=]    Set entrypoint (relative to rootdir, e.g: 'lib/index-strict.js')"
+)
+
+## DEFAULTS
+ENTRY="${ROOT_DIR}/lib/index.js"
+OUTPUT="${ROOT_DIR}/refactor/tmp/analyze-old"
+mkdir -p $OUTPUT
+
+## PROCESS FLAGS
+while (( $# )); do
+  case $1 in
+    -h|--help)      printf "%s\n" $usage; return                                       ;;
+    -l|--list)      find "${ROOT_DIR}/lib" -name 'index*' -printf "lib/%f\n"; return  ;;
+    -e)             shift; ENTRY="${ROOT_DIR}/$1"                                      ;;
+    -entry=*)       ENTRY="${ROOT_DIR}${1#*=}"                                         ;;
+    *)              printf "Invalid Input\n$s\n" $usage; return                        ;;
+  esac
+  shift
+done
+
+## SET UP ARGUMENTS FOR COMMANDS
+arguments=(
+  --context ${ROOT_DIR}/
+  --config ${ROOT_DIR}/webpack.config.js
+  --entry-reset --entry ${ENTRY}
+  --output-path ${OUTPUT}/
+  --profile
+  --json
+)
+
+# echo "npx webpack $arguments"
+npx webpack $arguments > ${OUTPUT}/stats.json
+npx webpack-bundle-analyzer ${OUTPUT}/stats.json

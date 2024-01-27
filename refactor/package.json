@@ -1,0 +1,15 @@
+{
+  "name": "plotly-refactor",
+  "version": "0.0.0",
+  "description": "Beginning of a plotly refactor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Pikul",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.90.0",
+    "webpack-bundle-analyzer": "^4.10.1"
+  }
+}
