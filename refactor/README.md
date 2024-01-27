@@ -6,7 +6,7 @@ All runnable commands are in `/refactor/bin`.
 
 ## Installing
 
-The common tools (npm, package.json) aren't used here! Go see the *[Dependencies](##Dependencies)* section of *Contributing*
+The common tools (npm, package.json) aren't used here! Go see the *[Dependencies](#dependencies)* section of *Contributing*
 
 ## Building
 
