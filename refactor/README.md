@@ -72,6 +72,9 @@ npm install  $(cat $(cat requirements-analysis.list))
 ```
 refactor/bin/               # contains all executable utilities used by user
 refactor/bin/analyze-old    # will start a server showing old-plotly's webpack-bundle-analyzer
+refactor/bin/check-master   # checks to see if master is merged into your branch, it probably should be
+                            # if at some point that no longer becomes appropriate, this should be modified
+                            # or what calls it shoudl be modified `grep bin/ -rne "check-master"`
 refactor/bin/util/          # commands, but not the first layer of the `refactor` api
 refactor/etc/               # contains config files
 refactor/etc/deps/:         # contains file files for deps
