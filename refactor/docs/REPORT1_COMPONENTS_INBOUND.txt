@@ -1,0 +1,106 @@
+// Convenient
+// list = window.objs[0].nodeIdList;
+
+// So firefox can actually render, collapse all children
+/*function toggleAll() {…
+Looked at victims ./src/components/calendars/ debugger eval code:139:11
+Looked at victims ./src/components/modebar/ debugger eval code:139:11
+Looked at victims ./src/components/annotations/ debugger eval code:139:11
+ From ./, 6 files attacking debugger eval code:146:13
+ From ./src/, 6 files attacking debugger eval code:146:13
+ From ./src/traces/, 1 files attacking debugger eval code:146:13
+ From ./src/components/, 5 files attacking debugger eval code:146:13
+ From ./src/components/annotations3d/, 3 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 1 files attacking debugger eval code:146:13
+ From ./src/components/shapes/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/annotations3d/ debugger eval code:139:11
+Looked at victims ./src/components/colorbar/ debugger eval code:139:11
+ From ./, 3 files attacking debugger eval code:146:13
+ From ./src/, 3 files attacking debugger eval code:146:13
+ From ./src/components/, 3 files attacking debugger eval code:146:13
+ From ./src/components/colorscale/, 3 files attacking debugger eval code:146:13
+Looked at victims ./src/components/colorscale/ debugger eval code:139:11
+ From ./, 72 files attacking debugger eval code:146:13
+ From ./src/, 72 files attacking debugger eval code:146:13
+ From ./src/traces/, 69 files attacking debugger eval code:146:13
+ From ./src/lib/, 1 files attacking debugger eval code:146:13
+ From ./src/components/, 2 files attacking debugger eval code:146:13
+ From ./src/components/colorbar/, 1 files attacking debugger eval code:146:13
+ From ./src/components/legend/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/dragelement/ debugger eval code:139:11
+ From ./, 10 files attacking debugger eval code:146:13
+ From ./src/, 10 files attacking debugger eval code:146:13
+ From ./src/traces/, 2 files attacking debugger eval code:146:13
+ From ./src/components/, 4 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 2 files attacking debugger eval code:146:13
+ From ./src/components/shapes/, 2 files attacking debugger eval code:146:13
+ From ./src/components/shapes/draw_newshape/, 1 files attacking debugger eval code:146:13
+ From ./src/components/selections/draw_newselection/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/drawing/ debugger eval code:139:11
+ From ./, 18 files attacking debugger eval code:146:13
+ From ./src/, 18 files attacking debugger eval code:146:13
+ From ./src/traces/, 12 files attacking debugger eval code:146:13
+ From ./src/components/, 4 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 2 files attacking debugger eval code:146:13
+ From ./src/components/shapes/, 2 files attacking debugger eval code:146:13
+ From ./src/components/shapes/draw_newshape/, 1 files attacking debugger eval code:146:13
+ From ./src/components/selections/draw_newselection/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/errorbars/ debugger eval code:139:11
+Looked at victims ./src/components/fx/ debugger eval code:139:11
+ From ./, 19 files attacking debugger eval code:146:13
+ From ./src/, 19 files attacking debugger eval code:146:13
+ From ./src/traces/, 10 files attacking debugger eval code:146:13
+ From ./src/components/, 4 files attacking debugger eval code:146:13
+ From ./src/components/modebar/, 1 files attacking debugger eval code:146:13
+ From ./src/components/dragelement/, 1 files attacking debugger eval code:146:13
+ From ./src/components/drawing/, 1 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/grid/ debugger eval code:139:11
+Looked at victims ./src/components/images/ debugger eval code:139:11
+Looked at victims ./src/components/legend/ debugger eval code:139:11
+ From ./, 2 files attacking debugger eval code:146:13
+ From ./src/, 2 files attacking debugger eval code:146:13
+ From ./src/components/, 2 files attacking debugger eval code:146:13
+ From ./src/components/fx/, 2 files attacking debugger eval code:146:13
+Looked at victims ./src/components/rangeselector/ debugger eval code:139:11
+Looked at victims ./src/components/rangeslider/ debugger eval code:139:11
+Looked at victims ./src/components/selections/ debugger eval code:139:11
+ From ./, 4 files attacking debugger eval code:146:13
+ From ./src/, 4 files attacking debugger eval code:146:13
+ From ./src/components/, 3 files attacking debugger eval code:146:13
+ From ./src/components/shapes/, 3 files attacking debugger eval code:146:13
+ From ./src/components/shapes/draw_newshape/, 2 files attacking debugger eval code:146:13
+Looked at victims ./src/components/shapes/ debugger eval code:139:11
+ From ./, 17 files attacking debugger eval code:146:13
+ From ./src/, 17 files attacking debugger eval code:146:13
+ From ./src/components/, 14 files attacking debugger eval code:146:13
+ From ./src/components/modebar/, 1 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 13 files attacking debugger eval code:146:13
+ From ./src/components/selections/draw_newselection/, 2 files attacking debugger eval code:146:13
+Looked at victims ./src/components/shapes/draw_newshape/ debugger eval code:139:11
+ From ./, 12 files attacking debugger eval code:146:13
+ From ./src/, 12 files attacking debugger eval code:146:13
+ From ./src/components/, 11 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 4 files attacking debugger eval code:146:13
+ From ./src/components/shapes/, 7 files attacking debugger eval code:146:13
+ From ./src/components/selections/draw_newselection/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/sliders/ debugger eval code:139:11
+Looked at victims ./src/components/titles/ debugger eval code:139:11
+Looked at victims ./src/components/updatemenus/ debugger eval code:139:11
+Looked at victims ./src/components/color/ debugger eval code:139:11
+ From ./, 20 files attacking debugger eval code:146:13
+ From ./src/, 20 files attacking debugger eval code:146:13
+ From ./src/traces/, 8 files attacking debugger eval code:146:13
+ From ./src/lib/, 1 files attacking debugger eval code:146:13
+ From ./src/components/, 4 files attacking debugger eval code:146:13
+ From ./src/components/legend/, 1 files attacking debugger eval code:146:13
+ From ./src/components/rangeselector/, 1 files attacking debugger eval code:146:13
+ From ./src/components/rangeslider/, 1 files attacking debugger eval code:146:13
+ From ./src/components/updatemenus/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/components/selections/draw_newselection/ debugger eval code:139:11
+ From ./, 4 files attacking debugger eval code:146:13
+ From ./src/, 4 files attacking debugger eval code:146:13
+ From ./src/components/, 3 files attacking debugger eval code:146:13
+ From ./src/components/selections/, 2 files attacking debugger eval code:146:13
+ From ./src/components/shapes/, 1 files attacking debugger eval code:146:13
+0

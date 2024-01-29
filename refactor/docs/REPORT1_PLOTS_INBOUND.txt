@@ -1,0 +1,60 @@
+// Convenient
+// list = window.objs[0].nodeIdList;
+
+// So firefox can actually render, collapse all children
+/*function toggleAll() {…
+Looked at victims ./src/plots/ debugger eval code:139:11
+ From ./, 371 files attacking debugger eval code:146:13
+ From ./src/, 371 files attacking debugger eval code:146:13
+ From ./src/traces/, 261 files attacking debugger eval code:146:13
+ From ./src/lib/, 2 files attacking debugger eval code:146:13
+ From ./src/transforms/, 4 files attacking debugger eval code:146:13
+ From ./src/components/, 80 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/cartesian/ debugger eval code:139:11
+ From ./, 217 files attacking debugger eval code:146:13
+ From ./src/, 217 files attacking debugger eval code:146:13
+ From ./src/traces/, 116 files attacking debugger eval code:146:13
+ From ./src/transforms/, 3 files attacking debugger eval code:146:13
+ From ./src/components/, 42 files attacking debugger eval code:146:13
+ From ./src/plots/, 47 files attacking debugger eval code:146:13
+ From ./src/plots/geo/, 2 files attacking debugger eval code:146:13
+ From ./src/plots/gl3d/, 6 files attacking debugger eval code:146:13
+ From ./src/plots/gl3d/layout/, 4 files attacking debugger eval code:146:13
+ From ./src/plots/mapbox/, 1 files attacking debugger eval code:146:13
+ From ./src/plots/polar/, 14 files attacking debugger eval code:146:13
+ From ./src/plots/smith/, 5 files attacking debugger eval code:146:13
+ From ./src/plots/ternary/, 9 files attacking debugger eval code:146:13
+ From ./src/plots/gl2d/, 8 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/geo/ debugger eval code:139:11
+ From ./, 1 files attacking debugger eval code:146:13
+ From ./src/, 1 files attacking debugger eval code:146:13
+ From ./src/lib/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/gl3d/ debugger eval code:139:11
+ From ./, 6 files attacking debugger eval code:146:13
+ From ./src/, 6 files attacking debugger eval code:146:13
+ From ./src/traces/, 5 files attacking debugger eval code:146:13
+ From ./src/components/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/gl3d/layout/ debugger eval code:139:11
+ From ./, 6 files attacking debugger eval code:146:13
+ From ./src/, 6 files attacking debugger eval code:146:13
+ From ./src/plots/, 6 files attacking debugger eval code:146:13
+ From ./src/plots/gl3d/, 6 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/mapbox/ debugger eval code:139:11
+ From ./, 7 files attacking debugger eval code:146:13
+ From ./src/, 7 files attacking debugger eval code:146:13
+ From ./src/traces/, 7 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/polar/ debugger eval code:139:11
+ From ./, 3 files attacking debugger eval code:146:13
+ From ./src/, 3 files attacking debugger eval code:146:13
+ From ./src/traces/, 2 files attacking debugger eval code:146:13
+ From ./src/plots/, 1 files attacking debugger eval code:146:13
+ From ./src/plots/smith/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/smith/ debugger eval code:139:11
+ From ./, 2 files attacking debugger eval code:146:13
+ From ./src/, 2 files attacking debugger eval code:146:13
+ From ./src/traces/, 1 files attacking debugger eval code:146:13
+ From ./src/plots/, 1 files attacking debugger eval code:146:13
+ From ./src/plots/polar/, 1 files attacking debugger eval code:146:13
+Looked at victims ./src/plots/ternary/ debugger eval code:139:11
+Looked at victims ./src/plots/gl2d/ debugger eval code:139:11
+0

@@ -1,0 +1,123 @@
+// Convenient
+// list = window.objs[0].nodeIdList;
+
+// So firefox can actually render, collapse all children
+/*function toggleAll() {…
+Looked at attacker ./src/plots/ debugger eval code:142:11
+ From ./src/plots/, 2 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/plots/, 83 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/, 78 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/cartesian/ debugger eval code:142:11
+ From ./src/plots/cartesian/, 28 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/cartesian/, 23 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/geo/ debugger eval code:142:11
+ From ./src/plots/geo/, 7 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/geo/, 9 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/gl3d/ debugger eval code:142:11
+ From ./src/plots/gl3d/, 13 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/gl3d/, 4 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/gl3d/layout/ debugger eval code:142:11
+ From ./src/plots/gl3d/layout/, 9 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/gl3d/layout/, 2 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/mapbox/ debugger eval code:142:11
+ From ./src/plots/mapbox/, 1 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/plots/mapbox/, 10 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/mapbox/, 9 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/polar/ debugger eval code:142:11
+ From ./src/plots/polar/, 9 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/polar/, 10 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/smith/ debugger eval code:142:11
+ From ./src/plots/smith/, 3 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/smith/, 2 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/ternary/ debugger eval code:142:11
+ From ./src/plots/ternary/, 5 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/ternary/, 12 attacking ./src/components/ debugger eval code:149:13
+Looked at attacker ./src/plots/gl2d/ debugger eval code:142:11
+ From ./src/plots/gl2d/, 2 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/plots/gl2d/, 3 attacking ./src/components/ debugger eval code:149:13
+undefined
+// Convenient
+// list = window.objs[0].nodeIdList;
+
+// So firefox can actually render, collapse all children
+/*function toggleAll() {…
+Looked at attacker ./src/lib/ debugger eval code:142:11
+ From ./src/lib/, 2 attacking ./src/plots/ debugger eval code:149:13
+ From ./src/lib/, 6 attacking ./src/components/ debugger eval code:149:13
+undefined
+// Convenient
+// list = window.objs[0].nodeIdList;
+
+// So firefox can actually render, collapse all children
+/*function toggleAll() {…
+Looked at attacker ./src/components/calendars/ debugger eval code:142:11
+ From ./src/components/calendars/, 1 attacking ./src/lib/ debugger eval code:149:13
+Looked at attacker ./src/components/modebar/ debugger eval code:142:11
+ From ./src/components/modebar/, 1 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/components/modebar/, 4 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/modebar/, 3 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/annotations/ debugger eval code:142:11
+ From ./src/components/annotations/, 9 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/annotations/, 8 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/annotations3d/ debugger eval code:142:11
+ From ./src/components/annotations3d/, 3 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/annotations3d/, 4 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/colorbar/ debugger eval code:142:11
+ From ./src/components/colorbar/, 7 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/colorbar/, 11 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/colorscale/ debugger eval code:142:11
+ From ./src/components/colorscale/, 8 attacking ./src/lib/ debugger eval code:149:13
+Looked at attacker ./src/components/dragelement/ debugger eval code:142:11
+ From ./src/components/dragelement/, 5 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/dragelement/, 1 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/drawing/ debugger eval code:142:11
+ From ./src/components/drawing/, 2 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/components/drawing/, 2 attacking ./src/lib/ debugger eval code:149:13
+Looked at attacker ./src/components/errorbars/ debugger eval code:142:11
+ From ./src/components/errorbars/, 1 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/components/errorbars/, 3 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/errorbars/, 1 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/fx/ debugger eval code:142:11
+ From ./src/components/fx/, 13 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/fx/, 3 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/grid/ debugger eval code:142:11
+ From ./src/components/grid/, 2 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/grid/, 2 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/images/ debugger eval code:142:11
+ From ./src/components/images/, 2 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/images/, 6 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/legend/ debugger eval code:142:11
+ From ./src/components/legend/, 3 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/components/legend/, 6 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/legend/, 4 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/rangeselector/ debugger eval code:142:11
+ From ./src/components/rangeselector/, 4 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/rangeselector/, 4 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/rangeslider/ debugger eval code:142:11
+ From ./src/components/rangeslider/, 5 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/rangeslider/, 7 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/selections/ debugger eval code:142:11
+ From ./src/components/selections/, 1 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/components/selections/, 8 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/selections/, 4 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/shapes/ debugger eval code:142:11
+ From ./src/components/shapes/, 1 attacking ./src/traces/ debugger eval code:149:13
+ From ./src/components/shapes/, 11 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/shapes/, 13 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/shapes/draw_newshape/ debugger eval code:142:11
+ From ./src/components/shapes/draw_newshape/, 2 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/shapes/draw_newshape/, 3 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/sliders/ debugger eval code:142:11
+ From ./src/components/sliders/, 4 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/sliders/, 5 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/titles/ debugger eval code:142:11
+ From ./src/components/titles/, 2 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/titles/, 1 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/updatemenus/ debugger eval code:142:11
+ From ./src/components/updatemenus/, 5 attacking ./src/lib/ debugger eval code:149:13
+ From ./src/components/updatemenus/, 4 attacking ./src/plots/ debugger eval code:149:13
+Looked at attacker ./src/components/color/ debugger eval code:142:11
+ From ./src/components/color/, 1 attacking ./src/lib/ debugger eval code:149:13
+Looked at attacker ./src/components/selections/draw_newselection/ debugger eval code:142:11
+ From ./src/components/selections/draw_newselection/, 1 attacking ./src/lib/ debugger eval code:149:13
+0
