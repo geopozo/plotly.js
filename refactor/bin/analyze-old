@@ -3,6 +3,10 @@
 ## GET ROOT DIR
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 
+${ROOT_DIR}/refactor/bin/check_master || exit 1
+
+COMMIT=$(git rev-parse --short HEAD)
+
 [[ -z "${ROOT_DIR}" ]] && echo "Error: can't find root project directory" 1>&2 && exit 1
 
 ## USAGE HELP
@@ -10,20 +14,24 @@ usage=(
   "analyze-old [-h|--h]"
   "analyze-old [-l|--list]      List entrypoints to plotly"
   "analyze-old [-e|--entry=]    Set entrypoint (relative to rootdir, e.g: 'lib/index-strict.js')"
+  "analyzeiold [-t]--tag=]      Will add a [tag] to 'stat-[commit].json' filename: 'stat-[commit]-[tag].json'"
 )
 
 ## DEFAULTS
 ENTRY="${ROOT_DIR}/lib/index.js"
 OUTPUT="${ROOT_DIR}/refactor/tmp/analyze-old"
 mkdir -p $OUTPUT
+TAG=""
 
 ## PROCESS FLAGS
 while (( $# )); do
   case $1 in
     -h|--help)      printf "%s\n" $usage; return                                       ;;
-    -l|--list)      find "${ROOT_DIR}/lib" -name 'index*' -printf "lib/%f\n"; return  ;;
+    -l|--list)      find "${ROOT_DIR}/lib" -name 'index*' -printf "lib/%f\n"; return   ;;
     -e)             shift; ENTRY="${ROOT_DIR}/$1"                                      ;;
     -entry=*)       ENTRY="${ROOT_DIR}${1#*=}"                                         ;;
+    -t)             shift; TAG="-$1"                                                   ;;
+    -tag=*)         TAG="-${1#*=}"                                                     ;;
     *)              printf "Invalid Input\n$s\n" $usage; return                        ;;
   esac
   shift
@@ -39,6 +47,8 @@ arguments=(
   --json
 )
 
-# echo "npx webpack $arguments"
-npx webpack $arguments > ${OUTPUT}/stats.json
-npx webpack-bundle-analyzer ${OUTPUT}/stats.json
+echo -e "Running:\n $ npx webpack $arguments"
+
+npx webpack $arguments > ${OUTPUT}/stats-${COMMIT}${TAG}.json
+echo -e "Output:\n${OUTPUT}/stats-${COMMIT}${TAG}.json"
+npx webpack-bundle-analyzer ${OUTPUT}/stats-${COMMIT}${TAG}.json
