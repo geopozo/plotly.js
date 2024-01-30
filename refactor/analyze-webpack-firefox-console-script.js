@@ -21,9 +21,19 @@ function toRun(variable) {
 }
 
 // incDict will either initialize a key to 1 or increment. Good for counting unique unique values.
+function addDict(dict, key, value) {
+	if(dict[key] === undefined) dict[key] = value;
+  else dict[key] += value;
+}
+// shortcut to above, unfavored
 function incDict(dict, key) {
-  if(dict[key] === undefined) dict[key] = 1;
-  else dict[key]++;
+  addDict(dict, key, 1);
+}
+
+// like addDict but we're making a list
+function pushDict(dict, key, value) {
+  if(dict[key] === undefined) dict[key] = [value];
+  else dict[key].push(value);
 }
 
 // countUniqueValues will find items that have key and count frequency of their values, returning a dictionary.
@@ -70,11 +80,67 @@ if(toRun({mod_by_file})) {
     }
 	})
 }
-console.log("Done!")
 
-console.log(all_mods);
-console.log(mod_types);
-console.log(mod_names);
-console.log(mod_by_file);
-// get needs one module
-// get needed one module
+// Very good reason breakdown
+// all reason types and all reasons there
+var all_reason_types;
+// all unique reasons and their frequency
+var count_all_reason_types;
+// total number of reasons and its modules (not frequency among modules)
+var reason_counts;
+// # of unique reasons types and its modules ( not frequency among modules )
+var reason_unique_type_counts;
+// # of reasons and its modules grouped by depth
+var reason_counts_by_depth;
+if(toRun({all_reason_types}) || 
+   toRun({count_all_reason_types}) || 
+   toRun({reason_counts}) || 
+   toRun({reason_unique_type_counts}) ||
+   toRun({reason_counts_by_depth})) {
+  all_reason_types = {}; // NOW ADD TO IT!
+  count_all_reason_types = {};
+  reason_counts = {};
+  reason_unique_type_counts = {};
+  reason_counts_by_depth = [];
+  Object.values(mod_by_file).forEach((mod) => {
+    if (!reason_counts_by_depth[mod.depth]) {
+      reason_counts_by_depth[mod.depth] = {};
+    }
+    // total number of reasons and its frequency among modules
+    pushDict(reason_counts, mod.reasons.length, mod);
+    pushDict(reason_counts_by_depth[mod.depth], mod.reasons.length, mod);
+    let temp_dict = countUniqueValues(mod.reasons, "type");
+    mod.reasons.forEach((reason) => {
+      pushDict(all_reason_types, reason.type, {"holdingModule":mod,"reason":reason})
+    });
+    // # of unique reasons and its frequency among modules
+    pushDict(reason_unique_type_counts, Object.keys(temp_dict).length, mod);
+    for (const key in temp_dict) {
+      // all unique reasons and their frequency
+      addDict(count_all_reason_types, key, temp_dict[key]);
+    }
+  });
+}
+// Most of this interesting to look at w/ certain filters on folders
+console.log(all_reason_types);
+console.log(count_all_reason_types);
+console.log(reason_counts);
+console.log(reason_unique_type_counts);
+console.log(reason_counts_by_depth); // Interesting to graph, better w/o filters
+
+// How many types have module names look at that? (maybe we can push reasons)
+// What's the unique set of module names? match mod_by_file.length?
+// Redo the above but with unique module names
+
+// Identify if it's cjs or ESM
+
+
+// Get all modules for which I'm a reason
+
+// let's create a directory tree
+// let's create a depth tree
+// process reasons
+// folders with index.js
+// folders w/ no index.js, all files
+
+"done"
