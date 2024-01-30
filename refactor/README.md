@@ -6,7 +6,7 @@ Currently we focus on **analysis** of plotly repository.
 
 This refactor is based on a new build system which allows more professional analysis of directories.
 * It can analyze webpack output.
-* [ ] (Planned) It can analyze the source code directly.
+* (Planned) It can analyze the source code directly.
 
 ## Execution:
 
