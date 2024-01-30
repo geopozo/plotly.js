@@ -1,9 +1,12 @@
 // This right now is for running in dev console, but one day I would like to do be able to do actual AST and static analysis on files. That means the folder will need be served, and there will have to be a function for accessing those served files.
-
+// Oh god I'm switching between snake_case and camelCase why
 // Warning, this only supports one chunk, since it gets modules from the one chunk. I think. I don't know if the way it gets modules works with two chunks.
 
 // Will make all re-run
 var allRun = false;
+
+
+var normalPath = new RegExp(/^\.\/.*(\.js|\.ts|\.mjs|\.cjs)$/);
 
 // toRun returns true if variable is not set properly. Wrap your variable in an object so we can get its variable name.
 function toRun(variable) {
@@ -72,16 +75,18 @@ var mod_by_file;
 
 if(toRun({mod_by_file})) {
   mod_by_file = {};
-	const re = new RegExp(/\.\/.*(\.js|\.ts|\.mjs|\.cjs)$/);
+  // TODO: Check Skipped
 	all_mods.forEach((mod) => {
     if(!mod.name) return;
-    if(re.test(mod.name)) {
+    if(normalPath.test(mod.name)) {
       mod_by_file[mod.name] = mod;
     }
 	})
 }
 
 // Very good reason breakdown
+// all reasons
+var all_reasons;
 // all reason types and all reasons there
 var all_reason_types;
 // all unique reasons and their frequency
@@ -93,11 +98,13 @@ var reason_unique_type_counts;
 // # of reasons and its modules grouped by depth
 var reason_counts_by_depth;
 if(toRun({all_reason_types}) || 
+   toRun({all_reasons}) || 
    toRun({count_all_reason_types}) || 
    toRun({reason_counts}) || 
    toRun({reason_unique_type_counts}) ||
    toRun({reason_counts_by_depth})) {
-  all_reason_types = {}; // NOW ADD TO IT!
+  all_reasons = [];
+  all_reason_types = {};
   count_all_reason_types = {};
   reason_counts = {};
   reason_unique_type_counts = {};
@@ -111,6 +118,7 @@ if(toRun({all_reason_types}) ||
     pushDict(reason_counts_by_depth[mod.depth], mod.reasons.length, mod);
     let temp_dict = countUniqueValues(mod.reasons, "type");
     mod.reasons.forEach((reason) => {
+      all_reasons.push(reason);
       pushDict(all_reason_types, reason.type, {"holdingModule":mod,"reason":reason})
     });
     // # of unique reasons and its frequency among modules
@@ -121,12 +129,57 @@ if(toRun({all_reason_types}) ||
     }
   });
 }
-// Most of this interesting to look at w/ certain filters on folders
+// Most of that is interesting to look at w/ certain filters on folders
+var inconsistentReasons = [];
+var weirdResolvedModule = [];
+all_reasons.forEach((reason) => {
+  // this seems to be a good way to resolve reasons
+  if (!normalPath.test(reason.resolvedModule)) {
+    weirdResolvedModule.push(reason);
+  }
+  if(reason.resolvedModule !== reason.module) {
+    inconsistentReasons.push(reason);
+  }
+});
+
+var self_referring_types = true;
+var weirdNames;
+var weirdResolvedModule2;
+if (toRun({self_referring_types}) ||
+     toRun({weirdNames}) ||
+     toRun({weirdResolvedModule2})) {
+    self_referring_types = {};
+    var weirdNames = [];
+    var weirdResolvedModule2 = [];
+  for (let type in all_reason_types) {
+    all_reason_types[type].forEach((tuple) => {
+      if (tuple["holdingModule"].name === tuple["reason"].resolvedModules) {
+        self_referring_types[type] = true;
+      }
+      if (!normalPath.test(tuple["holdingModule"].name) || !normalPath.test(tuple["reason"].resolvedModule)) {
+    		weirdNames.push(tuple["holdingModule"].name);
+    		weirdResolvedModule2.push(
+          tuple["reason"].resolvedModule
+        );
+  		}
+    });
+  }
+}
+console.log(weirdNames)
+console.log(weirdResolvedModule2);
+console.log(self_referring_types);
+
+// Alright, lets check type mixes
+
+console.log(inconsistentReasons);
+console.log(weirdResolvedModule);
 console.log(all_reason_types);
 console.log(count_all_reason_types);
 console.log(reason_counts);
 console.log(reason_unique_type_counts);
 console.log(reason_counts_by_depth); // Interesting to graph, better w/o filters
+
+// key point: development vs produciton build, do both require debug. Who is calling in debug?
 
 // How many types have module names look at that? (maybe we can push reasons)
 // What's the unique set of module names? match mod_by_file.length?
