@@ -5,8 +5,8 @@ Currently we focus on **analysis** of plotly repository.
 ## Analysis:
 
 This refactor is based on a new build system which allows more professional analysis of directories.
-** It can analyze webpack output.
-** (Planned) It can analyze the source code directly.
+* It can analyze webpack output.
+* [ ] (Planned) It can analyze the source code directly.
 
 ## Execution:
 
@@ -17,11 +17,11 @@ Plotly must be cleanly segmented into clear systems in order to be properly stra
 
 ### Build
 
-Current build systems lead to complexity. The execute procedural processes based on config files, often try to much more than they're good at. Are in general, unflexible. The new build system will allow good analysis, better maintenance, and follow-able build steps. The goal is create something suited for large systems maintained by experts, not to create the most work-out-of-the-box build system.
+Current build systems lead to complexity. They execute procedural processes based on config files, and often try to do much more than they're good at. They are in general, unflexible, and handle too many use cases. The new build system will allow good analysis, better maintenance, and follow-able build steps. The goal is create something suited for large systems maintained by experts, not to create the most work-out-of-the-box build system.
 
 ## Installing
 
-## Dependencies + Contributing (adding dependencies)
+## Dependencies
 
 You may need the follow globals: `zsh`, `node`...
 
@@ -56,16 +56,17 @@ npm install  $(cat $(cat requirements-analysis.list))
 
 ```
 refactor/bin/               # contains all executable utilities used by user
-refactor/bin/analyze-old    # will start a server showing old-plotly's webpack-bundle-analyzer
+refactor/bin/analyze-old    # start a server showing old-plotly's webpack-bundle-analyzer
 refactor/bin/check-master   # checks to see if master is merged into your branch, it probably should be
                             # if at some point that no longer becomes appropriate, this should be modified
                             # or what calls it shoudl be modified `grep bin/ -rne "check-master"`
+
 refactor/bin/util/          # commands, but not the first layer of the `refactor` api
 refactor/etc/               # contains config files
-refactor/etc/deps/:         # contains file files for deps
+refactor/etc/deps/:         # contains list for deps
 refactor/docs/              # will contain other docs besides this one
 refactor/tmp/               # nothing here is committed, temporary output goes here under its name
-refactor/tmp/analyze-old/   # intermediate steps form `analyze-old` would go here
+refactor/tmp/analyze-old/   # intermediate steps from `analyze-old` would go here
 ```
 ## Style of Code
 
