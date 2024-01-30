@@ -1,49 +1,33 @@
 Currently we focus on **analysis** of plotly repository.
 
-# Using
+# Overview:
 
-All runnable commands are in `/refactor/bin`.
+## Analysis:
+
+This refactor is based on a new build system which allows more professional analysis of directories.
+** It can analyze webpack output.
+** (Planned) It can analyze the source code directly.
+
+## Execution:
+
+
+### Source
+
+Plotly must be cleanly segmented into clear systems in order to be properly strangle-refactored. The goal of the analysis above is to identify which parts are most tangled up.
+
+### Build
+
+Current build systems lead to complexity. The execute procedural processes based on config files, often try to much more than they're good at. Are in general, unflexible. The new build system will allow good analysis, better maintenance, and follow-able build steps. The goal is create something suited for large systems maintained by experts, not to create the most work-out-of-the-box build system.
 
 ## Installing
 
-The common tools (npm, package.json) aren't used here! Go see the *[Dependencies](#dependencies)* section of *Contributing*
-
-## Building
-
-Nothing to build yet...
-
-## Testing
-
-Nothing to test yet
-
-## Analyzing
-
-### Analyzing Old Plotly:
-
-Default old-Ploty entry point is `/lib/index.js`.
-
-`/bin/analyze-old -h` to see commands, or w/o `-h` to run default. Will open browser:
-
-
-```
-# Definitions:
-
-# stat:   input size of file
-# parsed: minified sized
-# gzip:   size of minified after gzip
-```
-
-
-#### Notes
-##### Old Plotly Entry Points
-
-*Note: Old _Plotly_ has it's `/lib` folder that seems to be filled with hand-written `.js` files that just map themselves to their actual selves through `module.exports = require("the real me");` like `bar.js` which is just `module.exports = require("../src/traces/bar")`. The build system seems to only ever touches what's in that folder, maybe so no one could easily create tangled dependenciesbetween the build system and `src/`.*
-
-# Contributing
-
-## Dependencies
+## Dependencies + Contributing (adding dependencies)
 
 You may need the follow globals: `zsh`, `node`...
+
+The webpack analyzer is currently _not_ packaged and must be installed from [github](https://github.com/grupopikul/brow-json).
+
+*We don't use `package.json` to track dependencies.*
 
 In `/etc/deps` there are several `requirements-*.txt`, it's like this:
 
@@ -67,7 +51,8 @@ npm install --upgrade $(cat /etc/deps/requirements.txt)
 # or
 npm install  $(cat $(cat requirements-analysis.list))
 ```
-## Directory Map
+
+# Directory Map
 
 ```
 refactor/bin/               # contains all executable utilities used by user
@@ -82,13 +67,13 @@ refactor/docs/              # will contain other docs besides this one
 refactor/tmp/               # nothing here is committed, temporary output goes here under its name
 refactor/tmp/analyze-old/   # intermediate steps form `analyze-old` would go here
 ```
-## Style
+## Style of Code
 
-Use `/bin/analyze-old` as a template.
+Use `/bin/analyze-old` as a template to make scripts.
 
 # Goals
 
 This fork is a refactor of [plotly.py](https://github.com/plotly/plotly.js) with the following goals:
-1. Develop a tool for analyzing dependencies between files and individual functions.
-2. Samurai-ethos error handling. No quirky, undefined, or implied defaults. Everything is explicitly or an exception is raised.
-3. Excellent documentation
+- [ ] Develop a tool for analyzing dependencies between files and individual functions.
+- [ ] Samurai-ethos error handling. No quirky, undefined, or implied defaults. Everything is explicitly or an exception is raised.
+- [ ] Excellent contributor documentation
