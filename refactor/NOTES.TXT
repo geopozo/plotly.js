@@ -1,0 +1,932 @@
+../src
+├── assets
+│   └── geo_assets.js
+├── components
+│   ├── annotations
+│   │   ├── arrow_paths.js
+│   │   ├── attributes.js
+│   │   ├── calc_autorange.js
+│   │   ├── click.js
+│   │   ├── common_defaults.js
+│   │   ├── convert_coords.js
+│   │   ├── defaults.js
+│   │   ├── draw_arrow_head.js
+│   │   ├── draw.js
+│   │   └── index.js
+│   ├── annotations3d
+│   │   ├── attributes.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   └── index.js
+│   ├── calendars
+│   │   ├── calendars.js
+│   │   └── index.js
+│   ├── color
+│   │   ├── attributes.js
+│   │   └── index.js
+│   ├── colorbar
+│   │   ├── attributes.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   ├── has_colorbar.js
+│   │   └── index.js
+│   ├── colorscale
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── cross_trace_defaults.js
+│   │   ├── defaults.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   └── scales.js
+│   ├── dragelement
+│   │   ├── align.js
+│   │   ├── cursor.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   └── unhover.js
+│   ├── drawing
+│   │   ├── attributes.js
+│   │   ├── index.js
+│   │   └── symbol_defs.js
+│   ├── errorbars
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── compute_error.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── fx
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── click.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── helpers.js
+│   │   ├── hover.js
+│   │   ├── hoverlabel_defaults.js
+│   │   ├── hovermode_defaults.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   └── layout_global_defaults.js
+│   ├── grid
+│   │   └── index.js
+│   ├── images
+│   │   ├── attributes.js
+│   │   ├── convert_coords.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   └── index.js
+│   ├── legend
+│   │   ├── attributes.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   ├── get_legend_data.js
+│   │   ├── handle_click.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   └── style.js
+│   ├── modebar
+│   │   ├── attributes.js
+│   │   ├── buttons.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   ├── manage.js
+│   │   └── modebar.js
+│   ├── rangeselector
+│   │   ├── attributes.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   ├── get_update_object.js
+│   │   └── index.js
+│   ├── rangeslider
+│   │   ├── attributes.js
+│   │   ├── calc_autorange.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   └── oppaxis_attributes.js
+│   ├── selections
+│   │   ├── attributes.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   ├── draw_newselection
+│   │   │   ├── attributes.js
+│   │   │   ├── defaults.js
+│   │   │   └── newselections.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   └── select.js
+│   ├── shapes
+│   │   ├── attributes.js
+│   │   ├── calc_autorange.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── display_labels.js
+│   │   ├── display_outlines.js
+│   │   ├── draw.js
+│   │   ├── draw_newshape
+│   │   │   ├── attributes.js
+│   │   │   ├── constants.js
+│   │   │   ├── defaults.js
+│   │   │   ├── helpers.js
+│   │   │   └── newshapes.js
+│   │   ├── handle_outline.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   └── label_texttemplate.js
+│   ├── sliders
+│   │   ├── attributes.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw.js
+│   │   └── index.js
+│   ├── titles
+│   │   └── index.js
+│   └── updatemenus
+│       ├── attributes.js
+│       ├── constants.js
+│       ├── defaults.js
+│       ├── draw.js
+│       ├── index.js
+│       └── scrollbox.js
+├── constants
+│   ├── alignment.js
+│   ├── axis_placeable_objects.js
+│   ├── delta.js
+│   ├── docs.js
+│   ├── filter_ops.js
+│   ├── gl3d_dashes.js
+│   ├── gl3d_markers.js
+│   ├── interactions.js
+│   ├── numerical.js
+│   ├── pixelated_image.js
+│   └── xmlns_namespaces.js
+├── core.js
+├── css
+│   ├── _base.scss
+│   ├── _cursor.scss
+│   ├── _mixins.scss
+│   ├── _modebar.scss
+│   ├── _notifier.scss
+│   ├── style.scss
+│   ├── _tooltip.scss
+│   └── _vars.scss
+├── fonts
+│   └── ploticon.js
+├── generated
+│   └── regl-codegen
+│       ├── 30680f8f6712ef1af5cf7547e0af35b036fb300c67b07967cf448492ff4de4d0
+│       ├── 3e771157d23b4793771f65d83e6387262ed73d488209157f19a7fa027bddd71b
+│       ├── 3fd666968f3ce90d1c048b7a9aab515f3ce387a5401a10f8b66121c9469d1c0d
+│       ├── 453a70fefa48db31713162aeb1ac438cb8579f54504f3b23acf32128df3dfd45
+│       ├── 49e82bba439f1d9d441c17ba252d05640bc63fefdf22d1219993633af7730210
+│       ├── 6a5d6bd29c15cf7614221b94c3f384df47c2c46fbe4456e8c57b5cd14c84d923
+│       ├── 8902aff2b23b600f8103bcc84a8af2999d28795208aedadc2db06f921f9c7034
+│       ├── 8fad2284703471df7c0e0d0a7b96d983e8c53f6d707dd55d5921c1eab71f6623
+│       ├── a3970baf1d8cac9305ee830c7026550387343d4dde2353dd86a4d082c97d3470
+│       ├── bfc540da96a87fcc039073cb37b45e6b81ef5ee6ef3529d726ceed8336354019
+│       ├── cbf700f001fff25b649fba9c37fa0dc6631c1cdee318ad49473d28ec10dcee81
+│       ├── db1b82c68771e7f5012fad1fbdae7ff23b526e58d2995bf6dd2cf30024e0f41d
+│       ├── dbd1cc9126a137a605df67dc0706e55116f04e33b4545a80042031752de5aef5
+│       └── fe5b6844077cde1bdd7273f4495969fad93500c26a69b62e74ec2664c447bcc7
+├── lib
+│   ├── anchor_utils.js
+│   ├── angles.js
+│   ├── array.js
+│   ├── clean_number.js
+│   ├── clear_gl_canvases.js
+│   ├── clear_responsive.js
+│   ├── coerce.js
+│   ├── dates.js
+│   ├── dom.js
+│   ├── events.js
+│   ├── extend.js
+│   ├── filter_unique.js
+│   ├── filter_visible.js
+│   ├── geojson_utils.js
+│   ├── geo_location_utils.js
+│   ├── geometry2d.js
+│   ├── gl_format_color.js
+│   ├── gup.js
+│   ├── identity.js
+│   ├── increment.js
+│   ├── index.js
+│   ├── is_plain_object.js
+│   ├── keyed_container.js
+│   ├── localize.js
+│   ├── loggers.js
+│   ├── make_trace_groups.js
+│   ├── matrix.js
+│   ├── mod.js
+│   ├── nested_property.js
+│   ├── noop.js
+│   ├── notifier.js
+│   ├── override_cursor.js
+│   ├── polygon.js
+│   ├── prepare_regl.js
+│   ├── preserve_drawing_buffer.js
+│   ├── push_unique.js
+│   ├── queue.js
+│   ├── regex.js
+│   ├── relative_attr.js
+│   ├── relink_private.js
+│   ├── search.js
+│   ├── setcursor.js
+│   ├── show_no_webgl_msg.js
+│   ├── sort_object_keys.js
+│   ├── stats.js
+│   ├── str2rgbarray.js
+│   ├── supports_pixelated_image.js
+│   ├── svg_text_utils.js
+│   ├── throttle.js
+│   ├── to_log_range.js
+│   └── topojson_utils.js
+├── locale-en.js
+├── locale-en-us.js
+├── plot_api
+│   ├── container_array_match.js
+│   ├── edit_types.js
+│   ├── helpers.js
+│   ├── index.js
+│   ├── manage_arrays.js
+│   ├── plot_api.js
+│   ├── plot_config.js
+│   ├── plot_schema.js
+│   ├── plot_template.js
+│   ├── subroutines.js
+│   ├── template_api.js
+│   ├── to_image.js
+│   └── validate.js
+├── plots
+│   ├── animation_attributes.js
+│   ├── array_container_defaults.js
+│   ├── attributes.js
+│   ├── cartesian
+│   │   ├── align_period.js
+            # Exports a single function which seems like an intermediate step in some calculation. Effectively, it rounds dates to other dates based on user settings.
+
+│   │   ├── attributes.js
+│   │   ├── autorange.js
+│   │   ├── autorange_options_defaults.js
+│   │   ├── axes.js
+│   │   ├── axis_autotype.js
+│   │   ├── axis_defaults.js
+│   │   ├── axis_format_attributes.js
+│   │   ├── axis_ids.js
+│   │   ├── category_order_defaults.js
+│   │   ├── clean_ticks.js
+│   │   ├── constants.js
+│   │   ├── constraints.js
+│   │   ├── dragbox.js
+│   │   ├── graph_interact.js
+│   │   ├── include_components.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── line_grid_defaults.js
+│   │   ├── position_defaults.js
+│   │   ├── prefix_suffix_defaults.js
+│   │   ├── range_defaults.js
+│   │   ├── scale_zoom.js
+│   │   ├── set_convert.js
+│   │   ├── show_dflt.js
+│   │   ├── tick_label_defaults.js
+│   │   ├── tick_mark_defaults.js
+│   │   ├── tick_value_defaults.js
+│   │   ├── transition_axes.js
+│   │   └── type_defaults.js
+│   ├── command.js
+│   ├── domain.js
+│   ├── font_attributes.js
+│   ├── frame_attributes.js
+│   ├── geo
+│   │   ├── constants.js
+│   │   ├── geo.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   └── zoom.js
+│   ├── get_data.js
+│   ├── gl2d
+│   │   ├── camera.js
+│   │   ├── convert.js
+│   │   ├── index.js
+│   │   └── scene2d.js
+│   ├── gl3d
+│   │   ├── index.js
+│   │   ├── layout
+│   │   │   ├── attributes.js
+│   │   │   ├── axis_attributes.js
+│   │   │   ├── axis_defaults.js
+│   │   │   ├── convert.js
+│   │   │   ├── defaults.js
+│   │   │   ├── layout_attributes.js
+│   │   │   ├── spikes.js
+│   │   │   └── tick_marks.js
+│   │   ├── project.js
+│   │   ├── scene.js
+│   │   └── zip3.js
+│   ├── layout_attributes.js
+│   ├── mapbox
+│   │   ├── constants.js
+│   │   ├── convert_text_opts.js
+│   │   ├── index.js
+│   │   ├── layers.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   └── mapbox.js
+│   ├── pad_attributes.js
+│   ├── plots.js
+│   ├── polar
+│   │   ├── constants.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── polar.js
+│   │   └── set_convert.js
+│   ├── smith
+│   │   ├── constants.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   └── layout_defaults.js
+│   ├── subplot_defaults.js
+│   ├── template_attributes.js
+│   └── ternary
+│       ├── index.js
+│       ├── layout_attributes.js
+│       ├── layout_defaults.js
+│       └── ternary.js
+├── registry.js
+├── snapshot
+│   ├── cloneplot.js
+│   ├── download.js
+│   ├── filesaver.js
+│   ├── helpers.js
+│   ├── index.js
+│   ├── svgtoimg.js
+│   ├── toimage.js
+│   └── tosvg.js
+├── traces
+│   ├── bar
+│   │   ├── arrays_to_calcdata.js
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── cross_trace_calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── helpers.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   ├── select.js
+│   │   ├── sieve.js
+│   │   ├── style_defaults.js
+│   │   ├── style.js
+│   │   └── uniform_text.js
+│   ├── barpolar
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   └── plot.js
+│   ├── box
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── cross_trace_calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   ├── select.js
+│   │   └── style.js
+│   ├── candlestick
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── carpet
+│   │   ├── ab_defaults.js
+│   │   ├── array_minmax.js
+│   │   ├── attributes.js
+│   │   ├── axis_aligned_line.js
+│   │   ├── axis_attributes.js
+│   │   ├── axis_defaults.js
+│   │   ├── calc_clippath.js
+│   │   ├── calc_gridlines.js
+│   │   ├── calc.js
+│   │   ├── calc_labels.js
+│   │   ├── catmull_rom.js
+│   │   ├── cheater_basis.js
+│   │   ├── compute_control_points.js
+│   │   ├── constants.js
+│   │   ├── create_i_derivative_evaluator.js
+│   │   ├── create_j_derivative_evaluator.js
+│   │   ├── create_spline_evaluator.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   ├── lookup_carpetid.js
+│   │   ├── makepath.js
+│   │   ├── map_1d_array.js
+│   │   ├── orient_text.js
+│   │   ├── plot.js
+│   │   ├── set_convert.js
+│   │   ├── smooth_fill_2d_array.js
+│   │   ├── smooth_fill_array.js
+│   │   └── xy_defaults.js
+│   ├── choropleth
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   ├── select.js
+│   │   └── style.js
+│   ├── choroplethmapbox
+│   │   ├── attributes.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── cone
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── contour
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── close_boundaries.js
+│   │   ├── colorbar.js
+│   │   ├── constants.js
+│   │   ├── constraint_defaults.js
+│   │   ├── constraint_mapping.js
+│   │   ├── contours_defaults.js
+│   │   ├── convert_to_constraints.js
+│   │   ├── defaults.js
+│   │   ├── empty_pathinfo.js
+│   │   ├── end_plus.js
+│   │   ├── find_all_paths.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── label_defaults.js
+│   │   ├── make_color_map.js
+│   │   ├── make_crossings.js
+│   │   ├── plot.js
+│   │   ├── set_contours.js
+│   │   ├── style_defaults.js
+│   │   └── style.js
+│   ├── contourcarpet
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── densitymapbox
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── funnel
+│   │   ├── arrays_to_calcdata.js
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── cross_trace_calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── funnelarea
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── heatmap
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── clean_2d_array.js
+│   │   ├── colorbar.js
+│   │   ├── convert_column_xyz.js
+│   │   ├── defaults.js
+│   │   ├── find_empties.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── interp2d.js
+│   │   ├── label_defaults.js
+│   │   ├── make_bound_array.js
+│   │   ├── plot.js
+│   │   ├── style_defaults.js
+│   │   ├── style.js
+│   │   └── xyz_defaults.js
+│   ├── heatmapgl
+│   │   ├── attributes.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── histogram
+│   │   ├── attributes.js
+│   │   ├── average.js
+│   │   ├── bin_attributes.js
+│   │   ├── bin_functions.js
+│   │   ├── bin_label_vals.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── cross_trace_defaults.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── norm_functions.js
+│   ├── histogram2d
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── sample_defaults.js
+│   ├── histogram2dcontour
+│   │   ├── attributes.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── icicle
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── draw_descendants.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── partition.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── image
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── helpers.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── indicator
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── isosurface
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── mesh3d
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── ohlc
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── ohlc_defaults.js
+│   │   ├── plot.js
+│   │   ├── select.js
+│   │   └── style.js
+│   ├── parcats
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   ├── parcats.js
+│   │   └── plot.js
+│   ├── parcoords
+│   │   ├── attributes.js
+│   │   ├── axisbrush.js
+│   │   ├── base_index.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   ├── lines.js
+│   │   ├── merge_length.js
+│   │   ├── parcoords.js
+│   │   ├── plot.js
+│   │   ├── plot-strict.js
+│   │   ├── regl_precompiled.js
+│   │   ├── shaders
+│   │   │   ├── fragment.glsl
+│   │   │   └── vertex.glsl
+│   │   └── strict.js
+│   ├── pie
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── fill_one.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   ├── style.js
+│   │   └── style_one.js
+│   ├── pointcloud
+│   │   ├── attributes.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── sankey
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   ├── render.js
+│   │   └── select.js
+│   ├── scatter
+│   │   ├── arrays_to_calcdata.js
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── calc_selection.js
+│   │   ├── colorscale_calc.js
+│   │   ├── constants.js
+│   │   ├── cross_trace_calc.js
+│   │   ├── cross_trace_defaults.js
+│   │   ├── defaults.js
+│   │   ├── fillcolor_defaults.js
+│   │   ├── format_labels.js
+│   │   ├── get_trace_color.js
+│   │   ├── grouping_defaults.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── line_defaults.js
+│   │   ├── line_points.js
+│   │   ├── line_shape_defaults.js
+│   │   ├── link_traces.js
+│   │   ├── make_bubble_size_func.js
+│   │   ├── marker_colorbar.js
+│   │   ├── marker_defaults.js
+│   │   ├── period_defaults.js
+│   │   ├── plot.js
+│   │   ├── select.js
+│   │   ├── stack_defaults.js
+│   │   ├── style.js
+│   │   ├── subtypes.js
+│   │   ├── text_defaults.js
+│   │   └── xy_defaults.js
+│   ├── scatter3d
+│   │   ├── attributes.js
+│   │   ├── calc_errors.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── scattercarpet
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── scattergeo
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   ├── select.js
+│   │   └── style.js
+│   ├── scattergl
+│   │   ├── attributes.js
+│   │   ├── base_index.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   ├── edit_style.js
+│   │   ├── format_labels.js
+│   │   ├── helpers.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   ├── plot_strict.js
+│   │   ├── regl_precompiled.js
+│   │   ├── scene_update.js
+│   │   ├── select.js
+│   │   └── strict.js
+│   ├── scattermapbox
+│   │   ├── attributes.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   └── select.js
+│   ├── scatterpolar
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── scatterpolargl
+│   │   ├── attributes.js
+│   │   ├── base_index.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   ├── plot_strict.js
+│   │   ├── regl_precompiled.js
+│   │   └── strict.js
+│   ├── scattersmith
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── scatterternary
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── event_data.js
+│   │   ├── format_labels.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── splom
+│   │   ├── attributes.js
+│   │   ├── base_index.js
+│   │   ├── base_plot.js
+│   │   ├── base_plot_strict.js
+│   │   ├── calc.js
+│   │   ├── defaults.js
+│   │   ├── edit_style.js
+│   │   ├── helpers.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── plot.js
+│   │   ├── regl_precompiled.js
+│   │   ├── scene_update.js
+│   │   ├── select.js
+│   │   └── strict.js
+│   ├── streamtube
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── sunburst
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── fill_one.js
+│   │   ├── fx.js
+│   │   ├── helpers.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── surface
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   ├── table
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── data_preparation_helper.js
+│   │   ├── data_split_helpers.js
+│   │   ├── defaults.js
+│   │   ├── index.js
+│   │   └── plot.js
+│   ├── treemap
+│   │   ├── attributes.js
+│   │   ├── base_plot.js
+│   │   ├── calc.js
+│   │   ├── constants.js
+│   │   ├── defaults.js
+│   │   ├── draw_ancestors.js
+│   │   ├── draw_descendants.js
+│   │   ├── draw.js
+│   │   ├── flip_tree.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── partition.js
+│   │   ├── plot.js
+│   │   ├── plot_one.js
+│   │   └── style.js
+│   ├── violin
+│   │   ├── attributes.js
+│   │   ├── calc.js
+│   │   ├── cross_trace_calc.js
+│   │   ├── defaults.js
+│   │   ├── helpers.js
+│   │   ├── hover.js
+│   │   ├── index.js
+│   │   ├── layout_attributes.js
+│   │   ├── layout_defaults.js
+│   │   ├── plot.js
+│   │   └── style.js
+│   ├── volume
+│   │   ├── attributes.js
+│   │   ├── convert.js
+│   │   ├── defaults.js
+│   │   └── index.js
+│   └── waterfall
+│       ├── attributes.js
+│       ├── calc.js
+│       ├── constants.js
+│       ├── cross_trace_calc.js
+│       ├── defaults.js
+│       ├── event_data.js
+│       ├── hover.js
+│       ├── index.js
+│       ├── layout_attributes.js
+│       ├── layout_defaults.js
+│       ├── plot.js
+│       └── style.js
+├── transforms
+│   ├── aggregate.js
+│   ├── filter.js
+│   ├── groupby.js
+│   ├── helpers.js
+│   └── sort.js
+└── version.js
+
+95 directories, 833 files

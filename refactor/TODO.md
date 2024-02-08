@@ -1,0 +1,2 @@
+- [ ] I think I lost a documentation refactor. Keep as much as possible out of README.md- do this again.
+- [ ] All intermediary code for the webpack analysis has moved to new json-browser, which is being fleshed out. Don't modify this until that is done.
