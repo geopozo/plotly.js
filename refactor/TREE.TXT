@@ -275,12 +275,21 @@
 │   ├── attributes.js
 │   ├── cartesian
 │   │   ├── align_period.js
-            # Exports a single function which seems like an intermediate step in some calculation. Effectively, it rounds dates to other dates based on user settings.
+            # Exports a single function which seems like an intermediate step in some calculation.
+            # Effectively, it rounds dates to other dates based on user settings.
 
 │   │   ├── attributes.js
-│   │   ├── autorange.js
-│   │   ├── autorange_options_defaults.js
+            # Still not sure what attributes are.
+│   │   ├── autorange.js # unfinished
+            # 217: Do you have to check both?
+            # 223: isReversed should do the check on 222
+│   │   ├── autorange_options_defaults.js # passing functions as arguments for anything other than callbacks is cancer
+            # like seriously, i have 0 idea what this function does, coerce
 │   │   ├── axes.js
+            # 107: this is why we need typescript
+            # what is xaxis and xaxis domain, how is axlist
+            # 162:184 is a travesty
+            # 296 not sure what this conditional does, doesn't read correctly
 │   │   ├── axis_autotype.js
 │   │   ├── axis_defaults.js
 │   │   ├── axis_format_attributes.js
