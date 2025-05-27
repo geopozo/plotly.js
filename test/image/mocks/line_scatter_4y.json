@@ -45,7 +45,6 @@
    "y": [4, 5, 6, 7],
    "type": "scatter",
    "yaxis": "y3"
-   }
   },
   {
    "name":"x1 on y3 2",
@@ -86,20 +85,22 @@
       }
     },
     "yaxis3": {
-      "anchor": "x",
+      "anchor": "free",
       "overlaying": "y",
       "side": "right",
       "title": {
         "text": "<b>Third</b> yaxis title"
-      }
+      },
+      "position": 0.98
     },
     "yaxis4": {
-      "anchor": "x",
+      "anchor": "free",
       "overlaying": "y",
       "side": "left",
       "title": {
         "text": "<b>Fourth</b> yaxis title"
-      }
+      },
+      "position": 0.02
     },
     "title": {
       "text": "4 Y Axis Example"
