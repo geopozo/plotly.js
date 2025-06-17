@@ -146,13 +146,12 @@ proto.createGroup = function() {
  */
 proto.createButton = function(config) {
     var _this = this;
-    var button = document.createElement('button');
+    var button = document.createElement('a');
 
-    button.setAttribute('type', 'button');
     button.setAttribute('tabindex', '0');
     button.setAttribute('rel', 'tooltip');
     button.className = 'modebar-btn';
-    
+
     var title = config.title;
     if(title === undefined) title = config.name;
     // for localization: allow title to be a callable that takes gd as arg
